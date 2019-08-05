@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>04.function</title>
+<script type="text/javascript">
+	function sayHello() {
+		document.write("<h1>안녕하세요.</h1>");
+		document.write("<h2>자바스크립트</h2>");
+	}
+	sayHello();
+	
+	sayHello();
+	
+	function sum(x, y){
+		var isStrx = !isNaN(x);
+		var isStry = !isNaN(y);
+		if(!isStrx || !isStry){
+			return "숫자를 주세요";
+		}
+		
+		var z = Number(x) + Number(y);
+		return z;
+	}
+	function printResult(x, y){
+		var result = sum(x, y);
+		document.write("<h3>" + result + "</h3>");
+	}
+	printResult(7, 66);
+	printResult("3", 25);
+	printResult("삼십", "사");
+</script>
+</head>
+<body>
+
+</body>
+</html>

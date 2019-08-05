@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Qweqwe</title>
+<script type="text/javascript">
+	function doSubmit() {
+		var frm = document.form1;
+		if(!frm.user_name.value){
+			alert("이름을 입력해주세요.");
+			frm.user_name.focus();
+			return false;
+		}
+		if(!frm.gender[0].checked && !frm.gender[1].checked){
+			alert("성별을 입력해주세요.");
+			frm.gender[0].focus();
+			return false;
+		}
+		if(frm.job.selectedIndex<1){
+			alert("직업을 입력해주세요.");
+			frm.job[0].focus();
+			return false;
+		}
+		var chk = false;
+		for(var i=0;i<frm.hobby.length;i++){
+			if(frm.hobby[i].checked){
+				chk=true;
+				break;
+			}
+		}
+		if(!chk){
+			alert("취미를 선택해주세요.");
+			frm.hobby[0].focus();
+			return false;
+		}
+		if(confirm("입력하신 내용이 맞습니까?")){
+			frm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+<form name="form1" action="17.if.html">
+		<fieldset>
+			<legend>회원가입</legend>
+			<label>이름</label>
+			<input type="text" name="user_name"><br>
+
+			<label>성별</label> 
+			<input type="radio" name="gender" value="male">남자
+			<input type="radio" name="gender" value="female">여자<br>
+			
+			<label>직업</label>
+			<select name="job">
+				<option value="" selected="selected">선택하세요</option>
+				<option value="programmer">프로그래머</option>
+				<option value="publisher">퍼블리셔</option>
+			</select><br>
+			
+			<label>취미</label>
+			<input type="checkbox" name="hobby" value="soccer">축구
+			<input type="checkbox" name="hobby" value="basketball">농구
+			<input type="checkbox" name="hobby" value="baseball">야구<br>
+
+			<input type="button" name="button" value="제출" onclick="doSubmit(); return false;">
+			<input type="button" name="button2" value="리셋">
+			<!-- <button onclick="doSubmit(); return false;">qwe</button> -->
+			
+			<!-- <input type="submit" value="제출">
+			<input type="reset" value="리셋"> -->
+		</fieldset>
+	</form>
+	글로벌인	  	 		 	 글로벌인<br>
+	글로벌인&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp글로벌인<br>
+	&lt&copy&reg&iquest		&gt
+<!-- <fieldset>
+<legend>회원가입</legend>
+<form name="form1" onsubmit="doSubmit(); return false;"><table>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="user_name"></td>
+		</tr>
+		<tr>
+			<td>성별</td>
+			<td><input type="radio" name="gender" value="male">남자
+			<input type="radio" name="gender" value="female">여자</td>
+		</tr>
+		<tr>
+			<td>직업</td>
+			<td><select name="job">
+				<option value="" selected="selected">선택하세요</option>
+				<option value="programmer">프로그래머</option>
+				<option value="publisher">퍼블리셔</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>취미</td>
+			<td><input type="checkbox" name="hobby" value="soccer">축구
+			<input type="checkbox" name="hobby" value="basketball">농구
+			<input type="checkbox" name="hobby" value="baseball">야구</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="submit" value="제출">
+				<input type="reset" value="리셋">
+			</td>
+		</tr>
+</table>
+</form>
+</fieldset> -->
+</body>
+</html>
